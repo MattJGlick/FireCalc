@@ -1,0 +1,23 @@
+{
+  "name": "FireCalc",
+  "version": "1.0.0",
+  "description": "Financial Independence Early Retirement Calculator",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattJGlick/FireCalc.git"
+  },
+  "author": "Matt Glick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattJGlick/FireCalc/issues"
+  },
+  "homepage": "https://github.com/MattJGlick/FireCalc",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
+  }
+}
