@@ -17,20 +17,7 @@ app.use(bodyParser.json());
 // handle the directing of the bootstrap files
 app.use(express.static(__dirname + '/bower_components'));
 
-// get request to the index
-app.get('/', function(req, res) {
-    res.render('index', {
-        title: 'Welcome'
-    });
-});
-
 // posting to the index
-app.post('/', function (req, res) {
-    console.log(JSON.stringify(req.body, null, 2));
-
-    res.render('index', {
-        title: 'Welcome'
-    });
-});
+app.use('/', require('./routers/calculate-router')());
 
 app.listen(3000);
