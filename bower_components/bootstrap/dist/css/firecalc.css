@@ -1,0 +1,23 @@
+body {
+    padding-top: 70px;
+}
+
+.buffer {
+    margin-top: 30px;
+}
+
+a.income{
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
+
+
+*[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
+}

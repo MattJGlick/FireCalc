@@ -1,21 +1,43 @@
 //
    Created by MattGlick on 3/31/2015.
-html
-   head
-      title=title
-      link(href='bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-   body
-      div.container
-         div.jumbotron
-            h1 Welcome to the FIRE Calculator
-            h3 Please enter your Annual Income and Savings Percentage to determine the number of years until you will be financially independent!
-            form.form-horizontal(method='post', action='/')
-               div.form-group
-                  label.col-sm-2(for='income') Annual Income:
-                  div.col-sm-10
-                     input.form-control(type='text', name='income', id='income', placeholder='Income')
-               div.form-group
-                  label.col-sm-2(for='savingsPercentage') Savings Percentage:
-                  div.col-sm-10
-                     input.form-control(type='text', name='percentage', id='income', placeholder='Percentage')
-               button.btn.btn-default(type='submit') Calculate
+html(ng-app='')
+    head
+        title=title
+        link(href='bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='bootstrap/dist/css/firecalc.css', rel='stylesheet')
+        script(src='angular/angular.min.js')
+
+        body
+        .container
+            .navbar.navbar-default.navbar-fixed-top
+                .container
+                    .navbar-header
+                        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href='#') FireCalc
+                    .collapse.navbar-collapse
+                        ul.nav.navbar-nav
+                            li.active
+                                a(href='#incomeTest') Income
+                            li
+                                a(href='#loans') Loans
+                            li
+                                a(href='#retirement') Retirement
+            .jumbotron
+                h1 Welcome to the FIRE Calculator
+                h3 Please enter your Annual Income and Savings Percentage to determine the number of years until you will be financially independent!
+            .buffer
+            form.form-horizontal
+                .form-group
+                    label.col-sm-2(for='income') Annual Income:
+                    .col-sm-10
+                        input.form-control(type='text', name='income', id='income', placeholder='Income')
+                .form-group
+                    label.col-sm-2(for='savingsPercentage') Savings Percentage:
+                    .col-sm-10
+                        input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', placeholder='Percentage')
+
+                button.btn.btn-default(type='submit') Calculate

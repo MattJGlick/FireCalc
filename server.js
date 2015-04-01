@@ -3,9 +3,10 @@
  */
 var express = require('express');
 var bodyParser = require('body-parser');
+var routes = require('./routes');
 
 
-var app = express();
+var app = module.exports = express();
 
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -17,7 +18,9 @@ app.use(bodyParser.json());
 // handle the directing of the bootstrap files
 app.use(express.static(__dirname + '/bower_components'));
 
-// posting to the index
-app.use('/', require('./routers/calculate-router')());
+app.get('/', routes.index);
+app.get('/partials/:name', routes.partials);
+
+app.get('*', routes.index);
 
 app.listen(3000);
