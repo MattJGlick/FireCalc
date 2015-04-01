@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MattJGlick/FireCalc",
   "dependencies": {
     "express": "^4.12.3",
-    "jade": "^1.9.2"
+    "jade": "^1.9.2",
+    "static": "^2.0.0"
   }
 }
