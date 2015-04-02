@@ -22,9 +22,6 @@ Financial Independence and Early Retirement Calculator
 2. Interest Rate
 
 #### Loans (Does not include Mortgage)
-* Student Loans
-* Car Loan
-
 1. Amount Remaining
 2. Interest Rate
 3. Minimum Payment
