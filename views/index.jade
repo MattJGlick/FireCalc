@@ -1,13 +1,14 @@
 //
    Created by MattGlick on 3/31/2015.
-html(ng-app='')
+html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
     head
         title=title
-        link(href='bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-        link(href='bootstrap/dist/css/firecalc.css', rel='stylesheet')
-        script(src='angular/angular.min.js')
+        link(href='./bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='./bower_components/bootstrap/dist/css/firecalc.css', rel='stylesheet')
+        script(src='./bower_components/angular/angular.min.js')
+        script(src='./js/controllers/calculate-controller.js')
 
-        body
+    body
         .container
             .navbar.navbar-default.navbar-fixed-top
                 .container
@@ -34,10 +35,12 @@ html(ng-app='')
                 .form-group
                     label.col-sm-2(for='income') Annual Income:
                     .col-sm-10
-                        input.form-control(type='text', name='income', id='income', placeholder='Income')
+                        input.form-control(type='text', name='income', id='income', ng-model='calculate.income', placeholder='Income')
                 .form-group
                     label.col-sm-2(for='savingsPercentage') Savings Percentage:
                     .col-sm-10
-                        input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', placeholder='Percentage')
-
+                        input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', ng-model='calculate.savingsPercentage' placeholder='Percentage')
                 button.btn.btn-default(type='submit') Calculate
+            label.col-sm-2(for='Result') Result
+            .col-sm-10
+                label.col-sm-10 {{ calculate.total() }}

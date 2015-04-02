@@ -5,22 +5,19 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
 
+var server = module.exports = express();
 
-var app = module.exports = express();
-
-app.set('views', './views');
-app.set('view engine', 'jade');
+server.set('views', './views');
+server.set('view engine', 'jade');
 
 // handle the body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
 
 // handle the directing of the bootstrap files
-app.use(express.static(__dirname + '/bower_components'));
+//server.use(express.static(__dirname + '/bower_components'));
+server.use(express.static(__dirname));
 
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+server.get('*', routes.index);
 
-app.get('*', routes.index);
-
-app.listen(3000);
+server.listen(3000);
