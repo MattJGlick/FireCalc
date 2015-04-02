@@ -1,13 +1,19 @@
 /**
  * Created by MattGlick on 4/2/2015.
  */
-var app = angular.module('FireCalc', []);
+(function(angular) {
+  'use strict';
 
-app.controller("CalculateController", function () {
-    this.income = 100;
-    this.savingsPercentage = 20;
+  var app = angular.module('FireCalc', ['calculate-service']);
 
-    this.total = function total() {
-        return this.income * this.savingsPercentage;
-    }
-});
+  app.controller("CalculateController", ['calculateService', function (calculateService) {
+      this.income = 100;
+      this.savingsPercentage = 20;
+      this.showResult = false;
+
+      this.toggleResult = function toggleResult() {
+        this.total = calculateService.total(this.income, this.savingsPercentage);
+        this.showResult = true;
+      }
+  }]);
+})(window.angular);

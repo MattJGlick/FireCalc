@@ -7,6 +7,7 @@ html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
         link(href='./bower_components/bootstrap/dist/css/firecalc.css', rel='stylesheet')
         script(src='./bower_components/angular/angular.min.js')
         script(src='./js/controllers/calculate-controller.js')
+        script(src='./js/services/calculate-service.js')
 
     body
         .container
@@ -40,7 +41,8 @@ html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
                     label.col-sm-2(for='savingsPercentage') Savings Percentage:
                     .col-sm-10
                         input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', ng-model='calculate.savingsPercentage' placeholder='Percentage')
-                button.btn.btn-default(type='submit') Calculate
-            label.col-sm-2(for='Result') Result
-            .col-sm-10
-                label.col-sm-10 {{ calculate.total() }}
+                button.btn.btn-default(type='submit', ng-click='calculate.toggleResult()') Calculate
+            div(ng-show='calculate.showResult')
+                label.col-sm-2(for='Result') Result
+                .col-sm-10
+                    label.col-sm-10 {{ calculate.total }}
