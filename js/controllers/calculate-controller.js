@@ -7,12 +7,10 @@
   var app = angular.module('FireCalc', ['calculate-service']);
 
   app.controller("CalculateController", ['calculateService', function (calculateService) {
-      this.income = 100;
-      this.savingsPercentage = 20;
       this.showResult = false;
 
       this.toggleResult = function toggleResult() {
-        this.total = calculateService.total(this.income, this.savingsPercentage);
+        this.retirementYear = calculateService.retirementYear(this.income, this.annualExpenses, this.retirementExpenses, this.loanAmount, this.interestRate);
         this.showResult = true;
       }
   }]);

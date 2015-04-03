@@ -11,23 +11,7 @@ html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
 
     body
         .container
-            .navbar.navbar-default.navbar-fixed-top
-                .container
-                    .navbar-header
-                        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                            span.sr-only Toggle navigation
-                            span.icon-bar
-                            span.icon-bar
-                            span.icon-bar
-                        a.navbar-brand(href='#') FireCalc
-                    .collapse.navbar-collapse
-                        ul.nav.navbar-nav
-                            li.active
-                                a(href='#incomeTest') Income
-                            li
-                                a(href='#loans') Loans
-                            li
-                                a(href='#retirement') Retirement
+            div(ng-include="'./partials/navbar'")
             .jumbotron
                 h1 Welcome to the FIRE Calculator
                 h3 Please enter your Annual Income and Savings Percentage to determine the number of years until you will be financially independent!
@@ -36,13 +20,25 @@ html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
                 .form-group
                     label.col-sm-2(for='income') Annual Income:
                     .col-sm-10
-                        input.form-control(type='text', name='income', id='income', ng-model='calculate.income', placeholder='Income')
+                        input.form-control(type='text', name='income', id='income', ng-model='calculate.income')
                 .form-group
-                    label.col-sm-2(for='savingsPercentage') Savings Percentage:
+                    label.col-sm-2(for='annualExpenses') Current Annual Expenses:
                     .col-sm-10
-                        input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', ng-model='calculate.savingsPercentage' placeholder='Percentage')
-                button.btn.btn-default(type='submit', ng-click='calculate.toggleResult()') Calculate
+                        input.form-control(type='text', name='annualExpenses', id='annualExpenses', ng-model='calculate.annualExpenses')
+                .form-group
+                    label.col-sm-2(for='retirementExpenses') Retirement Expenses:
+                    .col-sm-10
+                        input.form-control(type='text', name='retirementExpenses', id='retirementExpenses', ng-model='calculate.retirementExpenses')
+                .form-group
+                    label.col-sm-2(for='loanAmount') Loan Amount:
+                    .col-sm-10
+                        input.form-control(type='text', name='loanAmount', id='loanAmount', ng-model='calculate.loanAmount')
+                .form-group
+                    label.col-sm-2(for='interestRate') Loan Interest Rate:
+                    .col-sm-10
+                        input.form-control(type='text', name='interestRate', id='interestRate', ng-model='calculate.interestRate')
+            button.btn.btn-default(type='submit', ng-click='calculate.toggleResult()') Calculate
             div(ng-show='calculate.showResult')
-                label.col-sm-2(for='Result') Result
+                label.col-sm-2(for='retirementYear') Retirement Year
                 .col-sm-10
-                    label.col-sm-10 {{ calculate.total }}
+                    label.col-sm-10 {{ calculate.retirementYear }}

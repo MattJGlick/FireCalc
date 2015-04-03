@@ -18,6 +18,7 @@ server.use(bodyParser.json());
 //server.use(express.static(__dirname + '/bower_components'));
 server.use(express.static(__dirname));
 
-server.get('*', routes.index);
+server.get('/', routes.index);
+server.get('/partials/:name', routes.partials);
 
 server.listen(3000);
