@@ -1,0 +1,13 @@
+//
+   Created by glickm on 4/3/15.
+.panel.panel-default
+    .panel-heading Annual Expenses
+    .panel-body
+        .form-group
+            label.col-sm-2(for='annualExpenses') Current Annual Expenses:
+            .col-sm-10
+                input.form-control(type='text', name='annualExpenses', id='annualExpenses', ng-model='calculate.annualExpenses')
+        .form-group
+            label.col-sm-2(for='expectedExpenses') Expected Retirement Annual Expenses:
+            .col-sm-10
+                input.form-control(type='text', name='expectedExpenses', id='expectedExpenses', ng-model='calculate.expectedExpenses')

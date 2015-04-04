@@ -1,12 +1,17 @@
 //
-   Created by MattGlick on 4/2/2015.
-
-form.form-horizontal
-   .form-group
-      label.col-sm-2(for='income') Annual Income:
-      .col-sm-10
-         input.form-control(type='text', name='income', id='income', ng-model='calculate.income', placeholder='Income')
-   .form-group
-      label.col-sm-2(for='savingsPercentage') Savings Percentage:
-      .col-sm-10
-         input.form-control(type='text', name='savingsPercentage', id='savingsPercentage', ng-model='calculate.savingsPercentage' placeholder='Percentage')
+   Created by glickm on 4/3/15.
+.panel.panel-default
+    .panel-heading Loans
+    .panel-body
+        .form-group
+            label.col-sm-2(for='loanRemaining') Amount Remaining:
+            .col-sm-10
+                input.form-control(type='text', name='loanRemaining', id='loanRemaining', ng-model='calculate.loanRemaining')
+        .form-group
+            label.col-sm-2(for='loanRate') Interest Rate:
+            .col-sm-10
+                input.form-control(type='text', name='loanRate', id='loanRate', ng-model='calculate.loanRate')
+        .form-group
+            label.col-sm-2(for='loanMin') Loan Minumum Payment:
+            .col-sm-10
+                input.form-control(type='text', name='loanMin', id='loanMin', ng-model='calculate.loanMin')

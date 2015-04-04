@@ -1,0 +1,12 @@
+//
+   Created by glickm on 4/3/15.
+.panel.panel-default
+    .panel-heading Current Portfolio
+    .panel-body
+        .form-group
+            label.col-sm-2(for='portfolioAmount') Amount in Portfolio:
+            .col-sm-4
+                input.form-control(type='text', name='portfolioAmount', id='portfolioAmount', ng-model='calculate.portfolioAmount')
+            label.col-sm-2(for='portfolioReturn') Return Percent:
+            .col-sm-4
+                input.form-control(type='text', name='portfolioReturn', id='portfolioReturn', ng-model='calculate.portfolioReturn')

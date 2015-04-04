@@ -1,0 +1,17 @@
+//
+   Created by glickm on 4/3/15.
+.panel.panel-default
+    .panel-heading Mortgages
+    .panel-body
+        .form-group
+            label.col-sm-2(for='mortgageRemaining') Amount Remaining:
+            .col-sm-10
+                input.form-control(type='text', name='mortgageRemaining', id='mortgageRemaining', ng-model='calculate.mortgageRemaining')
+        .form-group
+            label.col-sm-2(for='mortgageRate') Mortgage Rate:
+            .col-sm-10
+                input.form-control(type='text', name='mortgageRate', id='mortgageRate', ng-model='calculate.mortgageRate')
+        .form-group
+            label.col-sm-2(for='mortgageMin') Mortgage Minumum Payment:
+            .col-sm-10
+                input.form-control(type='text', name='mortgageMin', id='mortgageMin', ng-model='calculate.mortgageMin')

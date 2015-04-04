@@ -17,26 +17,23 @@ html(ng-app='FireCalc' ng-controller='CalculateController as calculate')
                 h3 Please enter your Annual Income and Savings Percentage to determine the number of years until you will be financially independent!
             .buffer
             form.form-horizontal
-                .form-group
-                    label.col-sm-2(for='income') Annual Income:
-                    .col-sm-10
-                        input.form-control(type='text', name='income', id='income', ng-model='calculate.income')
-                .form-group
-                    label.col-sm-2(for='annualExpenses') Current Annual Expenses:
-                    .col-sm-10
-                        input.form-control(type='text', name='annualExpenses', id='annualExpenses', ng-model='calculate.annualExpenses')
-                .form-group
-                    label.col-sm-2(for='retirementExpenses') Retirement Expenses:
-                    .col-sm-10
-                        input.form-control(type='text', name='retirementExpenses', id='retirementExpenses', ng-model='calculate.retirementExpenses')
-                .form-group
-                    label.col-sm-2(for='loanAmount') Loan Amount:
-                    .col-sm-10
-                        input.form-control(type='text', name='loanAmount', id='loanAmount', ng-model='calculate.loanAmount')
-                .form-group
-                    label.col-sm-2(for='interestRate') Loan Interest Rate:
-                    .col-sm-10
-                        input.form-control(type='text', name='interestRate', id='interestRate', ng-model='calculate.interestRate')
+                .panel.panel-primary
+                    .panel-heading General Constants
+                    .panel-body
+                        div(ng-include="'./partials/constants'")
+                .panel.panel-primary
+                    .panel-heading Income
+                    .panel-body
+                        div(ng-include="'./partials/salary'")
+                        div(ng-include="'./partials/portfolio'")
+                        div(ng-include="'./partials/inheritance'")
+                .panel.panel-primary
+                    .panel-heading Expenses
+                    .panel-body
+                        div(ng-include="'./partials/expenses'")
+                        div(ng-include="'./partials/mortgage'")
+                        div(ng-include="'./partials/loans'")
+                        div(ng-include="'./partials/children'")
             button.btn.btn-default(type='submit', ng-click='calculate.toggleResult()') Calculate
             div(ng-show='calculate.showResult')
                 label.col-sm-2(for='retirementYear') Retirement Year
